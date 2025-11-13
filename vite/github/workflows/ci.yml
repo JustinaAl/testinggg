@@ -1,19 +1,16 @@
-name: github-ci
+name: github-ci-demo
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: checkout repository
         uses: actions/checkout@v3
-
-      - name: Install dependencies
+      - name: install dependencies
         run: npm install
-
       - name: run tests
         run: npm run test
